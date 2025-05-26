@@ -30,7 +30,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #005577;
+  background-color: var(--darkblue);
   color: white;
   padding: 20px 0;
 }
