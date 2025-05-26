@@ -99,7 +99,7 @@ section.slider {
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.951);
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
 }
 .slider-wrapper {
@@ -110,17 +110,30 @@ section.slider {
 div.slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  gap: 20px;
+  gap: 30px;
 }
 
 .slide {
-  flex: 0 0 100%;
-  background-color: var(--vistablue);
-  color: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--vistablue);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.slide i {
+    width: 20%;
+    font-size: 4em;
+}
+.slide div {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .slide:hover {
@@ -130,23 +143,25 @@ div.slider {
 
 .slide h3 {
   font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
 .slide p {
   font-size: 1rem;
+  text-align: start;
 }
 
 .dots {
-  margin-top: 20px;
+  margin-top: 30px;
 }
-
 .dot {
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
   margin: 0 5px;
   background-color: #ccc;
   border-radius: 50%;
+  border: 2px solid var(--vistablue);
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -170,7 +185,7 @@ footer .container {
     width: 80%;
     display: flex;
     justify-content: space-evenly;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 .footer a {
@@ -181,13 +196,24 @@ footer .container {
   text-decoration: underline;
 }
 footer aside {
-    font-size: 18px;
-    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    font-size: 1.5em;
     text-align: left;
 }
 footer aside h3 {
-    margin-left: -1em;
-    font-size: 25px;
+    font-size: 2em;
+}
+section.contact-wrapper {
+    display: flex;
+    gap: 30px;
+}
+div.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 footer iframe {
     width: 500px;
@@ -197,6 +223,7 @@ footer iframe {
 }
 footer p {
     font-size: 15px;
+}
+b {
     font-weight: bold;
-    margin: 10px;
 }
