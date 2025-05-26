@@ -1,4 +1,11 @@
 /* Základní reset */
+:root {
+  --blue: #80a4ed;
+  --gunmetal: #212A30;
+  --white: #F0F7FC;
+  --darkblue: #113F6A;
+  --vistablue: #959DE8;
+}
 * {
   margin: 0;
   padding: 0;
