@@ -11,6 +11,7 @@
 }
 
 body {
+<<<<<<< Updated upstream
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--gunmetal);
@@ -18,6 +19,16 @@ body {
     background-image: url(TileBG.png);
     background-repeat: repeat;
     background-size: 220px;
+=======
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  background-color: var(--gunmetal);
+  background-image: url(TileBG.png);
+  background-repeat: repeat;
+  background-size: 220px;
+>>>>>>> Stashed changes
 }
 
 .container {
@@ -163,9 +174,17 @@ body {
   color: white;
   text-align: center;
   padding: 30px 0;
+  display: flex;
+  flex-direction: column;
   font-size: 0.9rem;
 }
+footer .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 
+}
 .footer a {
   color: #66ccff;
   text-decoration: none;
@@ -173,6 +192,25 @@ body {
 
 .footer a:hover {
   text-decoration: underline;
+}
+footer aside {
+  margin: 2em;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+footer aside h3 {
+  margin-left: -1em;
+  font-size: 25px;
+}
+footer iframe {
+  border-radius: 1em;
+  box-shadow: 0 0 10px black;
+}
+footer p {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px;
 }
 
 @media (min-width: 768px) {
