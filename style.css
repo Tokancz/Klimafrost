@@ -41,13 +41,8 @@ body {
   align-items: center;
 }
 
-.nav-left, .nav-right {
-  display: flex;
-  gap: 20px;
-}
-
 .nav-links a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   font-weight: 500;
 }
@@ -82,16 +77,16 @@ body {
 
 .hero .btn {
   background-color: white;
-  color: #0077a6;
+  color: var(--darkblue);
   padding: 10px 25px;
   font-size: 1rem;
   text-decoration: none;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .hero .btn:hover {
-  background-color: #f0f0f0;
+  filter: contrast(.8);
 }
 
 /* Slider sekce */
