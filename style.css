@@ -158,51 +158,45 @@ div.slider {
 
 /* Footer */
 .footer {
-  background-color: var(--footer);
-  color: whi;
-  text-align: center;
-  padding: 30px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  gap: 20px;
   font-size: 0.9rem;
+  background-color: var(--footer);
 }
 footer .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
 }
 .footer a {
   color: #66ccff;
   text-decoration: none;
 }
-
 .footer a:hover {
   text-decoration: underline;
 }
 footer aside {
-  margin: 2em;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
 }
 footer aside h3 {
-  margin-left: -1em;
-  font-size: 25px;
+    margin-left: -1em;
+    font-size: 25px;
 }
 footer iframe {
-  border-radius: 1em;
-  box-shadow: 0 0 10px black;
+    width: 500px;
+    height: 300px;
+    border-radius: 1em;
+    box-shadow: 0 0 10px black;
 }
 footer p {
-  font-size: 15px;
-  font-weight: bold;
-  margin: 10px;
-}
-
-@media (min-width: 768px) {
-  .slider {
-    flex-wrap: nowrap;
-  }
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
 }
