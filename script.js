@@ -1,3 +1,25 @@
+
+document.querySelectorAll(".scroll-link").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault(); // Zamezí výchozímu chování (okamžité skrolování)
+    // Najdeme cílový prvek podle href
+    const targetId = link.getAttribute("href"); 
+    const target = document.querySelector(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      // Počkáme, než scrollování skončí, a spustíme animaci
+      setTimeout(() => {
+        // Odebrání případné předchozí animace (pro restart)
+        target.classList.remove("animate__animated", "animate__jello");
+        // Krátké zpoždění pro restart animace
+        setTimeout(() => {
+          target.style.setProperty('--animate-duration', '0.6s');
+          target.classList.add("animate__animated", "animate__jello");
+        }, 10); // Stačí malé zpoždění před přidáním animace
+      }, 300); // Delay (300 ms) mezi scrollováním a animací
+    }
+  });
+});
 const slider = document.getElementById('slider');
 const dots = document.querySelectorAll('.dot');
 let currentIndex = 0;
@@ -95,6 +117,7 @@ function prevSlide2() {
   }, 500);
 }
 
+  
 // Dots
 dots2.forEach(dot => {
   dot.addEventListener('click', () => {
@@ -107,38 +130,4 @@ dots2.forEach(dot => {
   });
 });
 
-// Auto-slide
-interval2 = setInterval(nextSlide2, 4000);
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-index'));
-        goToSlide(index);
-        if (autoSliding) {
-          clearInterval(interval);
-          autoSliding = false;
-        }
-      });
-    });
-    
-document.querySelectorAll(".scroll-link").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault(); // Zamezí výchozímu chování (okamžité skrolování)
-    // Najdeme cílový prvek podle href
-    const targetId = link.getAttribute("href"); 
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      // Počkáme, než scrollování skončí, a spustíme animaci
-      setTimeout(() => {
-        // Odebrání případné předchozí animace (pro restart)
-        target.classList.remove("animate__animated", "animate__jello");
-        // Krátké zpoždění pro restart animace
-        setTimeout(() => {
-          target.style.setProperty('--animate-duration', '1s');
-          target.classList.add('animate__animated', 'animate__jello');
-        }, 10); // Stačí malé zpoždění před přidáním animace
-      }, 300); // Delay (300 ms) mezi scrollováním a animací
-    }
-  });
-});
