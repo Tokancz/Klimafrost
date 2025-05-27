@@ -81,6 +81,7 @@ function nextSlide2() {
   }, 500);
 }
 
+<<<<<<< HEAD
 function prevSlide2() {
   if (currentIndex2 <= 0) return;
   currentIndex2--;
@@ -109,3 +110,35 @@ dots2.forEach(dot => {
 
 // Auto-slide
 interval2 = setInterval(nextSlide2, 4000);
+=======
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        goToSlide(index);
+        if (autoSliding) {
+          clearInterval(interval);
+          autoSliding = false;
+        }
+      });
+    });
+        document.querySelectorAll(".scroll-link").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault(); // Zamezí výchozímu chování (okamžité skrolování)
+          // Najdeme cílový prvek podle href
+          const targetId = link.getAttribute("href"); 
+          const target = document.querySelector(targetId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+            // Počkáme, než scrollování skončí, a spustíme animaci
+            setTimeout(() => {
+              // Odebrání případné předchozí animace (pro restart)
+              target.classList.remove("animate__animated", "animate__zoomIn");
+              // Krátké zpoždění pro restart animace
+              setTimeout(() => {
+                target.classList.add("animate__animated", "animate__zoomIn");
+              }, 10); // Stačí malé zpoždění před přidáním animace
+            }, 300); // Delay (300 ms) mezi scrollováním a animací
+          }
+        });
+      });
+>>>>>>> 091ec57e18360f4da09fe5d753d35f5c49266980
