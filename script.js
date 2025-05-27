@@ -38,10 +38,11 @@ const slider = document.getElementById('slider');
             // Počkáme, než scrollování skončí, a spustíme animaci
             setTimeout(() => {
               // Odebrání případné předchozí animace (pro restart)
-              target.classList.remove("animate__animated", "animate__zoomIn");
+              target.classList.remove("animate__animated", "animate__jello");
               // Krátké zpoždění pro restart animace
               setTimeout(() => {
-                target.classList.add("animate__animated", "animate__zoomIn");
+                target.style.setProperty('--animate-duration', '1s');
+                target.classList.add('animate__animated', 'animate__jello');
               }, 10); // Stačí malé zpoždění před přidáním animace
             }, 300); // Delay (300 ms) mezi scrollováním a animací
           }

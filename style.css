@@ -52,12 +52,20 @@ body {
 
 .nav-links > a:hover {
   filter: contrast(.6);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: black 0 0 10px;
   background-color: var(--vistablue);
 }
 
 .logo {
   font-size: 2em;
   font-weight: bold;
+  transition: .3s;
+  cursor: pointer;
+}
+.logo:hover {
+  font-size: 2.5em;
 }
 
 /* Hero */
@@ -172,7 +180,7 @@ div.slider {
   margin: 0 5px;
   background-color: #ccc;
   border-radius: 50%;
-  border: 2px solid var(--vistablue);
+  box-shadow: 0 0 6px var(--vistablue) inset;
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s;
