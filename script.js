@@ -81,7 +81,6 @@ function nextSlide2() {
   }, 500);
 }
 
-<<<<<<< HEAD
 function prevSlide2() {
   if (currentIndex2 <= 0) return;
   currentIndex2--;
@@ -110,7 +109,6 @@ dots2.forEach(dot => {
 
 // Auto-slide
 interval2 = setInterval(nextSlide2, 4000);
-=======
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
         const index = parseInt(dot.getAttribute('data-index'));
@@ -142,4 +140,3 @@ interval2 = setInterval(nextSlide2, 4000);
           }
         });
       });
->>>>>>> 091ec57e18360f4da09fe5d753d35f5c49266980
