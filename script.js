@@ -129,5 +129,3 @@ dots2.forEach(dot => {
     }
   });
 });
-
-
