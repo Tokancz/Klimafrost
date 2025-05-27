@@ -14,7 +14,7 @@ const slider = document.getElementById('slider');
 
     function nextSlide() {
       currentIndex = (currentIndex + 1) % slideCount;
-      goToSlide(currentIndex);
+      goToSlidePhoto(currentIndex);
     }
 
     dots.forEach(dot => {

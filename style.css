@@ -62,12 +62,16 @@ body {
 
 /* Hero */
 .hero {
-    background-color: #000010a6;
-    color: var(--white);
+  display: flex;
+  justify-content: center;
+  background-color: #000010a6;
+  color: var(--white);
   padding: 100px 0;
   text-align: center;
 }
-
+.hero .container {
+  width: 40%;
+}
 .hero h1 {
   font-size: 3em;
   font-weight: 600;
@@ -125,6 +129,12 @@ div.slider {
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+}
+.photo {
+  flex: 0 0 30%;
+}
+.slide img {
+  height: 200px;
 }
 .slide i {
     width: 20%;
