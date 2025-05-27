@@ -110,17 +110,17 @@ dots2.forEach(dot => {
 // Auto-slide
 interval2 = setInterval(nextSlide2, 4000);
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-index'));
-        goToSlide(index);
-        if (autoSliding) {
-          clearInterval(interval);
-          autoSliding = false;
-        }
-      });
-    });
-    
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const index = parseInt(dot.getAttribute('data-index'));
+    goToSlide(index);
+    if (autoSliding) {
+      clearInterval(interval);
+      autoSliding = false;
+    }
+  });
+});
+
 document.querySelectorAll(".scroll-link").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault(); // Zamezí výchozímu chování (okamžité skrolování)
