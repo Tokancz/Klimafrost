@@ -26,6 +26,7 @@ body {
   background-size: 220px;
   overflow-x: hidden;
   color: var(--white);
+  font-size: 1em;
 }
 
 /* Navbar */
@@ -274,7 +275,7 @@ div.card:hover {
   padding-top: 30px;
   padding-bottom: 20px;
   gap: 20px;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   background-color: var(--footer);
 }
 
@@ -327,11 +328,11 @@ footer iframe {
 }
 
 footer p {
-  font-size: 15px;
+  font-size: 1em;
 }
 
 b {
-    font-weight: bold;
+  font-weight: bold;
 }
 /* Formulář */
 input{
@@ -373,4 +374,17 @@ textarea:focus {
   footer .container {flex-direction: column;}
   section.hero2 {flex-direction: column;}
   div.card {height: auto;}
+}
+@media (width <= 425px) {
+  footer iframe {max-width: 100%;}
+  .slide {padding: 10px 30px; gap: 20px;}
+}
+@media (width <= 375px) {
+  body {font-size: .7em;}
+  footer .container {width: 90%;}
+}
+@media (width <= 320px) {
+  section.contact-wrapper {
+    flex-direction: column;
+  }
 }
