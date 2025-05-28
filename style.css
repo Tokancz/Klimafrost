@@ -7,50 +7,57 @@
   --footer: #41435ff5;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: var(--gunmetal);
-    background-color: var(--gunmetal);
-    background-image: url(TileBG.png);
-    background-repeat: repeat;
-    background-size: 220px;
-    overflow-x: hidden;
-    color: var(--white);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--gunmetal);
+  background-color: var(--gunmetal);
+  background-image: url(TileBG.png);
+  background-repeat: repeat;
+  background-size: 220px;
+  overflow-x: hidden;
+  color: var(--white);
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    align-items: center;
-    backdrop-filter: blur(5px) brightness(.5);
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(5px) brightness(.5);
 }
 
 .navbar .container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    
-}
-.nav-links {
-    height: 80px;
-    width: 100%;
-}
-.nav-links a, .nav-links div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: .3s;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
 }
 
-.nav-links > a:hover {
+.nav-links {
+  height: 80px;
+  width: 100%;
+}
+
+.nav-links a,
+.nav-links div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.nav-links>a:hover {
   filter: contrast(.6);
   font-size: 1.2em;
   font-weight: bold;
@@ -64,6 +71,7 @@ body {
   transition: .3s;
   cursor: pointer;
 }
+
 .logo:hover {
   font-size: 2.5em;
 }
@@ -77,9 +85,11 @@ body {
   padding: 100px 0;
   text-align: center;
 }
+
 .hero .container {
-  width: 40%;
+  width: 60%;
 }
+
 .hero h1 {
   font-size: 3em;
   font-weight: 600;
@@ -118,13 +128,14 @@ body {
 }
 /* Slider sekce */
 section.slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.951);
-    padding: 40px 0;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.951);
+  padding: 40px 0;
+  text-align: center;
 }
+
 .slider-wrapper {
   width: 90%;
 }
@@ -135,10 +146,12 @@ section.slider {
   width: max-content;
 }
 
+
 #slider2 .slide {
-  flex: 0 0 60%;
-  padding: 10px;
+  flex: 0 0 30%;
+  padding: 0px;
 }
+
 
 div.slider {
   display: flex;
@@ -147,33 +160,35 @@ div.slider {
 }
 
 .slide {
-    flex: 0 0 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--vistablue);
-    color: white;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--vistablue);
+  color: var(--white);
+  padding: 50px;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.336);
+  transition: transform 0.3s ease;
 }
 
 #slider2 .slide img {
-  height: auto;
+  height: 300px;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
+
 .slide i {
-    width: 20%;
-    font-size: 4em;
+  width: 20%;
+  font-size: 4em;
 }
+
 .slide div {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .slide:hover {
@@ -195,6 +210,7 @@ div.slider {
 .dots {
   margin-top: 30px;
 }
+
 .dot {
   height: 15px;
   width: 15px;
@@ -211,59 +227,109 @@ div.slider {
   background-color: var(--vistablue);
 }
 
+section.hero2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 30px;
+  justify-self: center;
+  background-color: #373646;
+}
+
+div.card {
+  width: auto;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: var(--vistablue);
+  padding: 30px 50px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  transition: .3s ease-in-out;
+}
+
+div.card i {
+  font-size: 3em;
+}
+
+div.card:hover {
+  transform: scale(1.05);
+}
+
+.hero2 h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
 /* Footer */
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 30px;
+  padding-bottom: 20px;
   gap: 20px;
   font-size: 0.9rem;
   background-color: var(--footer);
 }
+
 footer .container {
-    width: 80%;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
-    align-items: center;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  align-items: center;
 }
+
 .footer a {
   color: #66ccff;
   text-decoration: none;
 }
+
 .footer a:hover {
   text-decoration: underline;
 }
+
 footer aside {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    font-size: 1.5em;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  font-size: 1.5em;
+  text-align: left;
 }
+
 footer aside h3 {
-    font-size: 2em;
+  font-size: 2em;
 }
+
 section.contact-wrapper {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
+
 div.contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
 footer iframe {
-    width: 500px;
-    height: 300px;
-    border-radius: 1em;
-    box-shadow: 0 0 10px black;
+  width: 500px;
+  height: 300px;
+  border-radius: 1em;
+  box-shadow: 0 0 10px black;
 }
+
 footer p {
-    font-size: 15px;
+  font-size: 15px;
 }
+
 b {
     font-weight: bold;
 }
@@ -298,4 +364,13 @@ textarea {
 textarea:focus {
   border: 1px solid black;
   box-shadow: 0 0 5px black;
+  font-weight: bold;
+}
+
+@media (width <= 768px) {
+  .slide {padding: 30px;}
+  .hero .container {width: 80%;}
+  footer .container {flex-direction: column;}
+  section.hero2 {flex-direction: column;}
+  div.card {height: auto;}
 }

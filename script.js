@@ -3,7 +3,7 @@ document.querySelectorAll(".scroll-link").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault(); // Zamezí výchozímu chování (okamžité skrolování)
     // Najdeme cílový prvek podle href
-    const targetId = link.getAttribute("href"); 
+    const targetId = link.getAttribute("href");
     const target = document.querySelector(targetId);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
@@ -117,7 +117,7 @@ function prevSlide2() {
   }, 500);
 }
 
-  
+
 // Dots
 dots2.forEach(dot => {
   dot.addEventListener('click', () => {
