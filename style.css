@@ -55,9 +55,10 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: .3s;
+  height: 80px;
 }
 
-.navbar a:hover {
+.nav-links > a:hover {
   filter: contrast(.6);
   font-size: 1.2em;
   font-weight: bold;
