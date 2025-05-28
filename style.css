@@ -57,7 +57,7 @@ body {
   transition: .3s;
 }
 
-.navbar > a:hover {
+.navbar a:hover {
   filter: contrast(.6);
   font-size: 1.2em;
   font-weight: bold;
