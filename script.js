@@ -129,3 +129,5 @@ dots2.forEach(dot => {
     }
   });
 });
+
+interval2 = setInterval(nextSlide2, 4000);
