@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktní formulář</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f0fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            background:rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 1em;
+            box-shadow: 0 0 8px black;
+            padding: 1em;
+            text-align: center;
+        }
+        .boxik {
+            background: #e4e1f2;
+            padding: 15px;
+            border-radius: 1em;
+            max-width: 60%;
+            transition: 0.8s;
+        }
+        .boxik .nadpis {
+            font-size: 28px;
+            color: #4d4e5b;
+            text-align:center;
+        }  
+    input{
+        font-size: 20px;
+        padding: 0.5em;
+        max-width: 600px;
+        border: 1px solid #767582;
+        border-radius: 10px;
+        transition: .3s;
+        outline: none;
+        margin: 5px;
+    }
+    input:focus {
+        box-shadow: 0 0 5px black;
+        border: 1px solid black;
+        
+    }
+    textarea {
+        border: solid 1px rgba(0, 0, 0, 0.1);
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 5px;
+        resize: vertical;
+        font-size: 20px;
+        padding: 0.5em;
+        outline: none;
+        transition: .3s;
+    }
+    textarea:focus {
+        border: 1px solid black;
+        box-shadow: 0 0 5px black;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" name="form" action="kontakt.php">
+            <input type="text" name="jmeno" placeholder="Jméno:" required>
+            <input type="email" name="email" placeholder="Email:" required>
+            <input type="text" name="predmet" placeholder="Předmět:" required>
+            <textarea name="zprava" placeholder="Zpráva:" rows="4" required></textarea>
+            <input type="submit" class="btn" value="Odeslat">
+        </form>
+    </div>
+    
+</body>
+</html>
