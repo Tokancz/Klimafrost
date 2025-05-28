@@ -271,7 +271,7 @@ section.hero2 {
 
 div.card {
   width: auto;
-  height: 350px;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,7 +283,7 @@ div.card {
   transition: .3s ease-in-out;
 }
 
-.slider div.card i {
+div.card i {
   font-size: 3em;
 }
 
@@ -398,13 +398,16 @@ textarea:focus {
   font-weight: bold;
 }
 
+@media (width <= 1024px) {
+  div.card { flex-direction: column;}
+}
 @media (width <= 768px) {
   .container h1 {font-size: 3.2em;}
   .slide {padding: 30px;}
   .hero .container {width: 80%;}
   footer .container {flex-direction: column;}
   section.hero2 {flex-direction: column;}
-  div.card {height: auto;}
+  div.card {height: auto; min-height: 0; flex-direction: row;}
   section.slider { display: none;}
   .mobile-slider {  display: flex; }
 }
