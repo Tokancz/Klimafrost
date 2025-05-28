@@ -227,6 +227,20 @@ div.slider {
 .dot.active {
   background-color: var(--vistablue);
 }
+.mobile-slider {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.951);
+  padding: 40px 0;
+  text-align: center;
+}
+.mobile-slider .slide {
+  margin: 1em;
+}
+.mobile-slider .slide div {
+  text-align: left;
+}
 
 section.hero2 {
   width: 100%;
@@ -253,7 +267,7 @@ div.card {
   transition: .3s ease-in-out;
 }
 
-div.card i {
+.slider div.card i {
   font-size: 3em;
 }
 
@@ -369,16 +383,20 @@ textarea:focus {
 }
 
 @media (width <= 768px) {
+  .container h1 {font-size: 3.2em;}
   .slide {padding: 30px;}
   .hero .container {width: 80%;}
   footer .container {flex-direction: column;}
   section.hero2 {flex-direction: column;}
   div.card {height: auto;}
+  section.slider { display: none;}
+  .mobile-slider {  display: flex; }
 }
 @media (width <= 425px) {
+  .container h1 { font-size: 3em;}
   footer iframe {max-width: 100%;}
   .slide {padding: 10px 30px; gap: 20px;}
-}
+} 
 @media (width <= 375px) {
   body {font-size: .7em;}
   footer .container {width: 90%;}
