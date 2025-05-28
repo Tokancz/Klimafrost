@@ -33,7 +33,6 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  backdrop-filter: blur(5px) brightness(.5);
 }
 
 .navbar .container {
@@ -47,8 +46,8 @@ body {
   width: 100%;
 }
 
-.nav-links a,
-.nav-links div {
+.navbar a,
+.navbar div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +57,7 @@ body {
   transition: .3s;
 }
 
-.nav-links>a:hover {
+.navbar > a:hover {
   filter: contrast(.6);
   font-size: 1.2em;
   font-weight: bold;
@@ -77,6 +76,23 @@ body {
   font-size: 2.5em;
 }
 
+.nav-links > a {display: flex;}
+.nav-links i {display: none;}
+
+.navbar .burgrmenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 5px;
+  padding: 20px;
+  backdrop-filter: blur(5px) brightness(.5);
+  z-index: 1000;
+}
+.burgrmenu div {display: none;}
+.burgrmenu a, .burgrmenu i{font-size: 1.5em;}
 /* Hero */
 .hero {
   display: flex;
@@ -376,12 +392,22 @@ textarea:focus {
   div.card {height: auto;}
 }
 @media (width <= 425px) {
+  body {font-size: .8em;}
   footer iframe {max-width: 100%;}
   .slide {padding: 10px 30px; gap: 20px;}
+  .navbar .container {
+    display: flex; 
+    justify-content: space-between;
+    flex-direction: row-reverse; 
+    align-items: center; 
+    padding: 10px;
+  }
+  .nav-links > a {display: none;}
+  .nav-links i {display: block; font-size: 1.5em;}
+  footer .container {width: 90%;}
 }
 @media (width <= 375px) {
   body {font-size: .7em;}
-  footer .container {width: 90%;}
 }
 @media (width <= 320px) {
   section.contact-wrapper {
