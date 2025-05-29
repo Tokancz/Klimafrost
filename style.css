@@ -150,17 +150,18 @@ body {
   text-decoration: none;
   border-radius: 10px;
   transition: 0.3s;
-  transform: scale(1);
 }
 
 .btn:hover {
-  transform: scale(1.1);
   box-shadow: -2px 6px 29px -7px var(--white);
   border: none;
+  padding: 13px;
 }
 
 .btn:active {
+  font-size: 13px;
   transform: scale(0.95);
+  padding: 9px;
   box-shadow: -2px 6px 29px -7px var(--gunmetal);
 
 }
@@ -251,8 +252,9 @@ div.slider {
 }
 
 .dot {
-  height: 15px;
-  width: 15px;
+  height: 17px;
+  width: 17px;
+  padding: 0 5px;
   margin: 0 5px;
   background-color: #ccc;
   border-radius: 50%;
