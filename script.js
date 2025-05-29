@@ -7,10 +7,10 @@ document.querySelectorAll(".scroll-link").forEach((link) => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => {
-        target.classList.remove("animate__animated", "animate__flipItX");
+        target.classList.remove("animate__animated", "animate__bounce");
         setTimeout(() => {
           target.style.setProperty('--animate-duration', '0.6s');
-          target.classList.add("animate__animated", "animate__flipItX");
+          target.classList.add("animate__animated", "animate__bounce");
         }, 10);
       }, 300);
     }
