@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  max-width: 2560px;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
   color: var(--gunmetal);
@@ -42,7 +43,7 @@ body {
 }
 
 .nav-links {
-  height: 80px;
+  height: 0px;
   width: 100%;
 }
 
@@ -55,10 +56,15 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: .3s;
-  height: 80px;
+  height: 80px
 }
 
-.nav-links > a:hover {
+.burgrmenu a,
+.burgrmenu div {
+  height: 50px;
+}
+
+.nav-links>a:hover {
   filter: contrast(.6);
   font-size: 1.2em;
   font-weight: bold;
@@ -77,12 +83,18 @@ body {
   font-size: 2.5em;
 }
 
-.nav-links > a {display: flex;}
-.nav-links i {display: none;}
+.nav-links>a {
+  display: flex;
+}
+
+.nav-links i {
+  display: none;
+}
 
 .navbar .burgrmenu {
   position: fixed;
   top: 0;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -92,8 +104,16 @@ body {
   backdrop-filter: blur(5px) brightness(.5);
   z-index: 1000;
 }
-.burgrmenu div {display: none;}
-.burgrmenu a, .burgrmenu i{font-size: 1.5em;}
+
+.burgrmenu div {
+  display: none;
+}
+
+.burgrmenu a,
+.burgrmenu i {
+  font-size: 1.5em;
+}
+
 /* Hero */
 .hero {
   display: flex;
@@ -144,6 +164,7 @@ body {
   box-shadow: -2px 6px 29px -7px var(--gunmetal);
 
 }
+
 /* Slider sekce */
 section.slider {
   display: flex;
@@ -209,8 +230,8 @@ div.slider {
   align-items: start;
 }
 
-.slide:hover {
-  transform: scale(1.025);
+#sluzby .slide:hover {
+  transform: scale(1.01);
   filter: contrast(.8);
 }
 
@@ -244,6 +265,7 @@ div.slider {
 .dot.active {
   background-color: var(--vistablue);
 }
+
 .mobile-slider {
   display: none;
   flex-direction: column;
@@ -252,9 +274,11 @@ div.slider {
   padding: 40px 0;
   text-align: center;
 }
+
 .mobile-slider .slide {
   margin: 1em;
 }
+
 .mobile-slider .slide div {
   text-align: left;
 }
@@ -286,10 +310,6 @@ div.card {
 
 div.card i {
   font-size: 3em;
-}
-
-div.card:hover {
-  transform: scale(1.05);
 }
 
 .hero2 h3 {
@@ -365,8 +385,9 @@ footer p {
 b {
   font-weight: bold;
 }
+
 /* Formulář */
-input{
+input {
   font-size: 20px;
   padding: 0.5em;
   max-width: 600px;
@@ -376,11 +397,13 @@ input{
   outline: none;
   margin: 5px;
 }
+
 input:focus {
   box-shadow: 0 0 5px black;
   border: 1px solid black;
-  
+
 }
+
 textarea {
   border: solid 1px rgba(0, 0, 0, 0.1);
   font-family: Arial, Helvetica, sans-serif;
@@ -393,44 +416,102 @@ textarea {
   outline: none;
   transition: .3s;
 }
+
 textarea:focus {
   border: 1px solid black;
   box-shadow: 0 0 5px black;
   font-weight: bold;
 }
 
-@media (width <= 1024px) {
-  div.card { flex-direction: column;}
+@media (width <=1024px) {
+  div.card {
+    flex-direction: column;
+  }
 }
-@media (width <= 768px) {
-  .container h1 {font-size: 3.2em;}
-  .slide {padding: 30px;}
-  .hero .container {width: 80%;}
-  footer .container {flex-direction: column;}
-  section.hero2 {flex-direction: column;}
-  div.card {height: auto; min-height: 0; flex-direction: row;}
-  section.slider { display: none;}
-  .mobile-slider {  display: flex; }
+
+@media (width <=768px) {
+  .container h1 {
+    font-size: 3.2em;
+  }
+
+  .slide {
+    padding: 30px;
+  }
+
+  .hero .container {
+    width: 80%;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  section.hero2 {
+    flex-direction: column;
+  }
+
+  div.card {
+    height: auto;
+    min-height: 0;
+    flex-direction: row;
+  }
+
+  section.slider {
+    display: none;
+  }
+
+  .mobile-slider {
+    display: flex;
+  }
 }
-@media (width <= 425px) {
-  body {font-size: .8em;}
-  footer iframe {max-width: 100%;}
-  .slide {padding: 10px 30px; gap: 20px;}
+
+@media (width <=425px) {
+  body {
+    font-size: .8em;
+  }
+
+  footer iframe {
+    max-width: 100%;
+  }
+
+  .slide {
+    padding: 10px 30px;
+    gap: 20px;
+  }
+
   .navbar .container {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse; 
-    align-items: center; 
+    flex-direction: row-reverse;
+    align-items: center;
     padding: 10px;
   }
-  .nav-links > a {display: none;}
-  .nav-links i {display: block; font-size: 1.5em;}
-  footer .container {width: 90%;}
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .nav-links>a {
+    display: none;
+  }
+
+  .nav-links i {
+    display: block;
+    font-size: 1.5em;
+  }
+
+  footer .container {
+    width: 90%;
+  }
 }
-@media (width <= 375px) {
-  body {font-size: .7em;}
+
+@media (width <=375px) {
+  body {
+    font-size: .7em;
+  }
 }
-@media (width <= 320px) {
+
+@media (width <=320px) {
   section.contact-wrapper {
     flex-direction: column;
   }

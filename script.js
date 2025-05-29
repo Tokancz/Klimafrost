@@ -132,15 +132,6 @@ if (slider2) {
     });
   });
 
-  // Hover zastavení/průběh pro slider 2
-  slider2.addEventListener('mouseenter', () => {
-    if (autoSliding2) clearInterval(interval2);
-  });
-
-  slider2.addEventListener('mouseleave', () => {
-    if (autoSliding2) interval2 = setInterval(nextSlide2, 4000);
-  });
-
   interval2 = setInterval(nextSlide2, 4000);
 }
 
@@ -150,20 +141,20 @@ const icon = document.getElementById("icon");
 const navbar = document.getElementById("navbar");
 
 function TabOpen() {
-    if(!opened){
-        menu.classList.add("burgrmenu");
-        menu.classList.remove("container");
-        menu.classList.remove("nav-links");
-        navbar.style.backdropFilter = "";
-    }
-    else {
-        menu.classList.remove("burgrmenu");
-        menu.classList.add("container");
-        menu.classList.add("nav-links");
-        navbar.style.backdropFilter = "blur(5px) brightness(.5)";
-    }
-    opened = !opened;
-    console.log("Tab interact");
+  if (!opened) {
+    menu.classList.add("burgrmenu");
+    menu.classList.remove("container");
+    menu.classList.remove("nav-links");
+    navbar.style.backdropFilter = "";
+  }
+  else {
+    menu.classList.remove("burgrmenu");
+    menu.classList.add("container");
+    menu.classList.add("nav-links");
+    navbar.style.backdropFilter = "blur(5px) brightness(.5)";
+  }
+  opened = !opened;
+  console.log("Tab interact");
 }
 
 icon.addEventListener("click", TabOpen);
