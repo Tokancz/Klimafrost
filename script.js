@@ -68,11 +68,11 @@ if (slider2) {
   const dots2 = document.querySelectorAll('#dots2 .dot');
 
   let currentIndex2 = 1;
-  let slideCount2 = slides.length;
-  let autoSliding2 = true;
+  const slideCount2 = slides.length;
   let interval2;
   const slideWidthPercent = 30;
 
+  // Clone first and last slides for infinite effect
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slideCount2 - 1].cloneNode(true);
   slider2.insertBefore(lastClone, slides[0]);
@@ -121,19 +121,32 @@ if (slider2) {
     }, 500);
   }
 
-  dots2.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const index = parseInt(dot.getAttribute('data-index')) + 1;
-      goToSlide2(index);
-      if (autoSliding2) {
-        clearInterval(interval2);
-        autoSliding2 = false;
-      }
-    });
+  // Auto slide control
+  function startAutoSlide() {
+    interval2 = setInterval(nextSlide2, 4000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(interval2);
+  }
+
+  // Start auto sliding
+  startAutoSlide();
+
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+
+  prev.addEventListener("click", () => {
+    stopAutoSlide();
+    prevSlide2();
   });
 
-  interval2 = setInterval(nextSlide2, 4000);
+  next.addEventListener("click", () => {
+    stopAutoSlide();
+    nextSlide2();
+  });
 }
+
 
 let opened = false;
 const menu = document.getElementById("menu");

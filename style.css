@@ -129,7 +129,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -171,8 +171,9 @@ section.slider {
   flex-direction: column;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.951);
-  padding: 40px 0;
+  padding: 60px 0;
   text-align: center;
+  position: relative;
 }
 
 .slider-wrapper {
@@ -212,7 +213,7 @@ div.slider {
 }
 
 #slider2 .slide img {
-  height: 300px;
+  max-height: 400px;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
@@ -249,7 +250,20 @@ div.slider {
 .dots {
   margin-top: 30px;
 }
-
+div.icons{
+  position:absolute;
+  top: 45%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+  font-size: 3.5em;
+}
+.icons i {
+  filter: drop-shadow(0 0 15px #000000);
+  transition: .3s;
+}
+.icons i:hover {transform: scale(1.1); filter: contrast(.2) drop-shadow(0 0 15px #000000);}
 .dot {
   height: 15px;
   width: 15px;
