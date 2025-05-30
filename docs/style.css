@@ -403,6 +403,29 @@ b {
 }
 
 /* Formulář */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background:rgba(206, 206, 206, 0.795);
+  box-shadow: 0 0 8px black;
+  padding: 1em;
+  text-align: center;
+}
+.boxik {
+  background: #e4e1f2;
+  padding: 15px;
+  border-radius: 1em;
+  max-width: 60%;
+  transition: 0.8s;
+}
+.boxik .nadpis {
+  font-size: 28px;
+  color: #4d4e5b;
+  text-align:center;
+} 
+
 input {
   font-size: 20px;
   padding: 0.5em;
