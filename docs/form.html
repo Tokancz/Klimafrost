@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Klimafrost – Profesionální montáž a servis klimatizací pro domácnosti i firmy. Rychlé a kvalitní řešení chlazení.">
+    <meta name="keywords"
+        content="klimatizace, servis klimatizací, montáž klimatizace, chlazení, Klimafrost, klimatizační technika">
+    <meta name="author" content="Klimafrost">
     <title>Kontaktní formulář</title>
+    <link rel="stylesheet" href="https://api.ssps.cajthaml.eu/file/64d9f18f79dad891e8a07c73">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f2f0fe;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            min-height: 100vh;
-        }
-        .container {
+        .form-container {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 90%;
             background:rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
             border-radius: 1em;
             box-shadow: 0 0 8px black;
             padding: 1em;
@@ -74,7 +76,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <header class="navbar" id="navbar">
+        <div class="container nav-links" id="menu">
+            <i class="fa-solid fa-bars menu" id="icon"></i>
+            <a href="index.html#sluzby">Služby</a>
+            <a href="about.html">O nás</a>
+            <div class="logo"><a href="index.html">Klimafrost</a></div>
+            <a href="#kontakt" class="scroll-link">Kontakt</a>
+            <a href="Obchodní servisní a záruční podmínky.pdf" target="_blank">Obchodní podmínky</a>
+        </div>
+    </header>
+
+    <div class="form-container">
         <form method="POST" name="form" action="kontakt.php">
             <input type="text" name="jmeno" placeholder="Jméno:" required>
             <input type="email" name="email" placeholder="Email:" required>
@@ -83,6 +96,35 @@
             <input type="submit" class="btn" value="Odeslat">
         </form>
     </div>
-    
+
+    <footer class="footer" id="kontakt">
+        <div class="container">
+            <aside>
+                <h3>KLIMAFROST s.r.o</h3>
+                <section class="contact-wrapper">
+                    <div class="contacts">
+                        <div>
+                            <p><i class="fa-solid fa-envelope"></i> <a
+                                    href="mailto:klimafrost@seznam.cz">klimafrost@seznam.cz</a></p>
+                            <p><i class="fa-solid fa-phone"></i> <a href="tel:+420737256786">+420 737 256 786</a></p>
+                        </div>
+                        <div>
+                            <h4><b>Pracovní doba:</b></h4>
+                            <p>Kancelář a informace: Po - Pá 9:00 - 18:00</p>
+                            <p>Provozovna: Po - Ne 14:00 - 19:00</p>
+                        </div>
+                    </div>
+                    <div class="bank">
+                        <p><b>IČO:</b> 05102651</p>
+                        <p><b>DIČ:</b> CZ05102651</p>
+                        <p><b>Banka:</b> FIO banka</p>
+                        <p><b>Účet:</b> 2801006735/2010</p>
+                    </div>
+                </section>
+            </aside>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.253778047585!2d14.51269887748834!3d50.137684171534296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bec8b5306c235%3A0x2827a4d9db051904!2zQmVjaHnFiHNrw6EgNjQwLCAxOTkgMDAgTGV0xYhhbnk!5e0!3m2!1scs!2scz!4v1748505895863!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p><b>&copy; 2025 Klimafrost. Všechna práva vyhrazena.</b></p>
+    </footer>
 </body>
 </html>
