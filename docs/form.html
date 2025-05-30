@@ -31,13 +31,13 @@
     </header>
 
     <div class="form-container">
-        <form method="POST" name="form" action="kontakt.php" class="form">
-            <input type="text" name="jmeno" placeholder="Jméno:" required>
-            <input type="email" name="email" placeholder="Email:" required>
-            <input type="text" name="predmet" placeholder="Předmět:" required>
-            <textarea name="zprava" placeholder="Zpráva:" rows="4" required></textarea>
-            <input type="submit" class="btn" value="Odeslat">
-        </form>
+        <form method="POST" id="contact-form">
+            <input type="text" name="name" placeholder="Jméno:" required />
+            <input type="email" name="email" placeholder="Email:" required />
+            <input type="text" name="predmet" placeholder="Předmět:" required />
+            <textarea name="zprava" placeholder="Zpráva:" rows="4" maxlength="1000" required></textarea>
+            <input type="submit" class="btn" value="Odeslat" />
+          </form>
     </div>
 
     <footer class="footer" id="kontakt">
@@ -70,5 +70,32 @@
         <p><b>&copy; 2025 Klimafrost. Všechna práva vyhrazena.</b></p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("uOwFPHM9_P7nZ2N-_");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.querySelector('[name="name"]').value;
+    const email = document.querySelector('[name="email"]').value;
+    const predmet = document.querySelector('[name="predmet"]').value;
+    const zprava = document.querySelector('[name="zprava"]').value;
+
+    emailjs.send("service_lhcccpn", "template_fplt7ol", {
+      name: name,
+      email: email,
+      predmet: predmet,
+      zprava: zprava,
+    })
+    .then(function() {
+      alert("Zpráva byla úspěšně odeslána!");
+    }, function(error) {
+      alert("Chyba při odesílání: " + JSON.stringify(error));
+    });
+  });
+</script>
 </body>
 </html>
