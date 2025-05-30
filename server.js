@@ -4,10 +4,10 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const imagesDir = path.join(__dirname, 'public', 'images');
+const imagesDir = path.join(__dirname, 'docs', 'images');
 
 // Serve static files (HTML, JS, images)
-app.use(express.static('public'));
+app.use(express.static('docs'));
 
 // Endpoint to list image files
 app.get('/images-list', (req, res) => {
