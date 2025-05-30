@@ -61,18 +61,29 @@ if (slider && dots.length > 0) {
 }
 
 // === Druhý slider (slider 2) ===
-const slider2 = document.getElementById('slider2');
+fetch('/images-list')
+  .then(res => res.json())
+  .then(images => {
+    const slider = document.getElementById('slider2');
+    images.forEach(img => {
+      const slide = document.createElement('div');
+      slide.classList.add('slide');
+      slide.innerHTML = `<img src="images/${img}" alt="${img}">`;
+      slider.appendChild(slide);
+    });
 
-if (slider2) {
+    initializeSlider();
+  });
+
+function initializeSlider() {
+  const slider2 = document.getElementById('slider2');
+
   const slides = slider2.querySelectorAll('.slide');
-  const dots2 = document.querySelectorAll('#dots2 .dot');
-
   let currentIndex2 = 1;
   const slideCount2 = slides.length;
   let interval2;
-  const slideWidthPercent = 30;
+  const slideWidthPercent = 30; // change to fit your layout
 
-  // Clone first and last slides for infinite effect
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slideCount2 - 1].cloneNode(true);
   slider2.insertBefore(lastClone, slides[0]);
@@ -83,16 +94,10 @@ if (slider2) {
 
   slider2.style.transform = `translateX(-${slideWidthPercent * currentIndex2}%)`;
 
-  function updateDots(index) {
-    dots2.forEach(dot => dot.classList.remove('active'));
-    dots2[index % slideCount2].classList.add('active');
-  }
-
   function goToSlide2(index) {
     slider2.style.transition = 'transform 0.5s ease-in-out';
     slider2.style.transform = `translateX(-${slideWidthPercent * index}%)`;
     currentIndex2 = index;
-    updateDots(index - 1);
   }
 
   function nextSlide2() {
@@ -121,7 +126,6 @@ if (slider2) {
     }, 500);
   }
 
-  // Auto slide control
   function startAutoSlide() {
     interval2 = setInterval(nextSlide2, 4000);
   }
@@ -130,21 +134,17 @@ if (slider2) {
     clearInterval(interval2);
   }
 
-  // Start auto sliding
-  startAutoSlide();
-
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
-
-  prev.addEventListener("click", () => {
+  document.getElementById("prev").addEventListener("click", () => {
     stopAutoSlide();
     prevSlide2();
   });
 
-  next.addEventListener("click", () => {
+  document.getElementById("next").addEventListener("click", () => {
     stopAutoSlide();
     nextSlide2();
   });
+
+  startAutoSlide();
 }
 
 
